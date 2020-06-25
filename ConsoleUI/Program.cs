@@ -1,6 +1,7 @@
 ﻿using System;
 using DesignPattern.Builder;
 using DesignPattern.Builder.Builders;
+using DesignPattern.Factory.Documents;
 using DesignPatterns.AbstractFactory;
 using DesignPatterns.AbstractFactory.Factories;
 
@@ -11,9 +12,11 @@ namespace ConsoleUI
         private static void Main()
         {
             AbstractFactoryDemo();
-            Console.WriteLine("---------------------------");
+            Console.WriteLine("------------------------------------------------------");
             BuilderDemo();
-            Console.WriteLine("---------------------------");
+            Console.WriteLine("------------------------------------------------------");
+            FactoryDemo();
+            Console.WriteLine("------------------------------------------------------");
 
             _ = Console.ReadLine();
         }
@@ -42,6 +45,24 @@ namespace ConsoleUI
             Builder(new ScooterBuilder());
             Builder(new CarBuilder());
             Builder(new MotorCycleBuilder());
+        }
+
+        private static void FactoryDemo()
+        {
+            var documents = new Document[2]
+            {
+                new Resume(),
+                new Report()
+            };
+
+            foreach (var document in documents)
+            {
+                Console.WriteLine($"\n{document.GetType().Name}--");
+                foreach (var page in document.Pages)
+                {
+                    Console.WriteLine($" {page.GetType().Name}");
+                }
+            }
         }
     }
 }
