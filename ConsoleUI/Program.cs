@@ -1,10 +1,11 @@
 ﻿using System;
+using DesignPatterns.AbstractFactory;
+using DesignPatterns.AbstractFactory.Factories;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Builders;
 using DesignPatterns.Factory.Documents;
-using DesignPatterns.AbstractFactory;
-using DesignPatterns.AbstractFactory.Factories;
 using DesignPatterns.Prototype;
+using DesignPatterns.Singleton;
 
 namespace ConsoleUI
 {
@@ -19,6 +20,8 @@ namespace ConsoleUI
             FactoryDemo();
             Console.WriteLine("------------------------------------------------------");
             PrototypeDemo();
+            Console.WriteLine("------------------------------------------------------");
+            SingletonDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -81,11 +84,33 @@ namespace ConsoleUI
                 ["peace"] = new Color(128, 211, 128),
                 ["flame"] = new Color(211, 34, 20)
             };
-            
+
             // User clones selected colors
             _ = colormanager["red"].Clone();
             _ = colormanager["peace"].Clone();
             _ = colormanager["flame"].Clone();
+        }
+
+        private static void SingletonDemo()
+        {
+            var b1 = LoadBalancer.GetLoadBalancer();
+            var b2 = LoadBalancer.GetLoadBalancer();
+            var b3 = LoadBalancer.GetLoadBalancer();
+            var b4 = LoadBalancer.GetLoadBalancer();
+
+            // Same instance?
+            if (b1 == b2 && b2 == b3 && b3 == b4)
+            {
+                Console.WriteLine("Same instance\n");
+            }
+
+            // Load balance 15 server requests
+            var balancer = LoadBalancer.GetLoadBalancer();
+            for (var i = 0; i < 15; i++)
+            {
+                var server = balancer.Server;
+                Console.WriteLine($"Dispatch Request to: {server}");
+            }
         }
     }
 }
