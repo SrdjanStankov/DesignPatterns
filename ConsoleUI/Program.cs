@@ -1,7 +1,7 @@
 ﻿using System;
-using DesignPattern.Builder;
-using DesignPattern.Builder.Builders;
-using DesignPattern.Factory.Documents;
+using DesignPatterns.Builder;
+using DesignPatterns.Builder.Builders;
+using DesignPatterns.Factory.Documents;
 using DesignPatterns.AbstractFactory;
 using DesignPatterns.AbstractFactory.Factories;
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DesignPattern.Builder
+namespace DesignPatterns.Builder
 {
     public class Vehicle
     {

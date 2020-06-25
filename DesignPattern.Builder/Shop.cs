@@ -1,6 +1,6 @@
-﻿using DesignPattern.Builder.Builders;
+﻿using DesignPatterns.Builder.Builders;
 
-namespace DesignPattern.Builder
+namespace DesignPatterns.Builder
 {
     public static class Shop
     {

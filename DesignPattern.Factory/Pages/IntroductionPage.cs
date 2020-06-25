@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.Factory.Pages
+﻿namespace DesignPatterns.Factory.Pages
 {
     public class IntroductionPage : Page
     {

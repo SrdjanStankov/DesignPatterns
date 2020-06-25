@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.Builder.Builders
+﻿namespace DesignPatterns.Builder.Builders
 {
     public abstract class VehicleBuilder
     {

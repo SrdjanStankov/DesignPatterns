@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.AbstractFactory", "AbstractFactory\DesignPatterns.AbstractFactory.csproj", "{0B0B5751-9B4B-4D34-AD78-04BD4BD7EE86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.Builder", "DesignPattern.Builder\DesignPattern.Builder.csproj", "{B9E0218A-5ED3-4441-905B-27C3FC8CEDA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Builder", "DesignPattern.Builder\DesignPatterns.Builder.csproj", "{B9E0218A-5ED3-4441-905B-27C3FC8CEDA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.Factory", "DesignPattern.Factory\DesignPattern.Factory.csproj", "{8B1D89D2-09AA-4D86-A39C-1AE61AE4AC40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Factory", "DesignPattern.Factory\DesignPatterns.Factory.csproj", "{8B1D89D2-09AA-4D86-A39C-1AE61AE4AC40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

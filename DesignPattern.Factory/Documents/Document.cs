@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using DesignPattern.Factory.Pages;
+using DesignPatterns.Factory.Pages;
 
-namespace DesignPattern.Factory.Documents
+namespace DesignPatterns.Factory.Documents
 {
     public abstract class Document
     {
