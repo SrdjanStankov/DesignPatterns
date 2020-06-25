@@ -4,6 +4,7 @@ using DesignPatterns.Builder.Builders;
 using DesignPatterns.Factory.Documents;
 using DesignPatterns.AbstractFactory;
 using DesignPatterns.AbstractFactory.Factories;
+using DesignPatterns.Prototype;
 
 namespace ConsoleUI
 {
@@ -17,6 +18,9 @@ namespace ConsoleUI
             Console.WriteLine("------------------------------------------------------");
             FactoryDemo();
             Console.WriteLine("------------------------------------------------------");
+            PrototypeDemo();
+            Console.WriteLine("------------------------------------------------------");
+
 
             _ = Console.ReadLine();
         }
@@ -63,6 +67,25 @@ namespace ConsoleUI
                     Console.WriteLine($" {page.GetType().Name}");
                 }
             }
+        }
+
+        private static void PrototypeDemo()
+        {
+            var colormanager = new ColorManager()
+            {
+                ["red"] = new Color(255, 0, 0),
+                ["green"] = new Color(0, 255, 0),
+                ["blue"] = new Color(0, 0, 255),
+
+                ["angry"] = new Color(255, 54, 0),
+                ["peace"] = new Color(128, 211, 128),
+                ["flame"] = new Color(211, 34, 20)
+            };
+            
+            // User clones selected colors
+            _ = colormanager["red"].Clone();
+            _ = colormanager["peace"].Clone();
+            _ = colormanager["flame"].Clone();
         }
     }
 }

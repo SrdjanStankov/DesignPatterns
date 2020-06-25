@@ -9,6 +9,7 @@
     <ProjectReference Include="..\AbstractFactory\DesignPatterns.AbstractFactory.csproj" />
     <ProjectReference Include="..\DesignPattern.Builder\DesignPatterns.Builder.csproj" />
     <ProjectReference Include="..\DesignPattern.Factory\DesignPatterns.Factory.csproj" />
+    <ProjectReference Include="..\DesignPatterns.Prototype\DesignPatterns.Prototype.csproj" />
   </ItemGroup>
 
 </Project>
