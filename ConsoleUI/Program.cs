@@ -9,6 +9,7 @@ using DesignPatterns.Composite;
 using DesignPatterns.Decorator;
 using DesignPatterns.Facade;
 using DesignPatterns.Factory.Documents;
+using DesignPatterns.Flyweight;
 using DesignPatterns.Prototype;
 using DesignPatterns.Singleton;
 
@@ -37,6 +38,8 @@ namespace ConsoleUI
             DecoratorDemo();
             Console.WriteLine("------------------------------------------------------");
             FacadeDemo();
+            Console.WriteLine("------------------------------------------------------");
+            FlyweightDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -208,6 +211,22 @@ namespace ConsoleUI
             bool eligible = Mortgage.IsEligible(customer, 125000);
 
             Console.WriteLine($"\n{customer.Name} has been {(eligible ? "Approved" : "Rejected")}");
+        }
+
+        private static void FlyweightDemo()
+        {
+            string document = "AAZZBBZB";
+            char[] chars = document.ToCharArray();
+
+            var factory = new CharacterFactory();
+            int pointSize = 10;
+
+            foreach (char c in chars)
+            {
+                pointSize++;
+                Character character = factory.GetCharacter(c);
+                character.Display(pointSize);
+            }
         }
     }
 }
