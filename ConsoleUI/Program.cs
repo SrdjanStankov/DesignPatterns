@@ -6,6 +6,7 @@ using DesignPatterns.Bridge;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Builders;
 using DesignPatterns.Composite;
+using DesignPatterns.Decorator;
 using DesignPatterns.Factory.Documents;
 using DesignPatterns.Prototype;
 using DesignPatterns.Singleton;
@@ -31,6 +32,8 @@ namespace ConsoleUI
             BridgeDemo();
             Console.WriteLine("------------------------------------------------------");
             CompositeDemo();
+            Console.WriteLine("------------------------------------------------------");
+            DecoratorDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -176,6 +179,23 @@ namespace ConsoleUI
 
             // Recursively display nodes
             root.Display(1);
+        }
+
+        private static void DecoratorDemo()
+        {
+            var book = new Book("Worley", "Inside ASP.NET", 10);
+            book.Display();
+
+            Video video = new Video("Spielberg", "Jaws", 23, 92);
+            video.Display();
+
+            Console.WriteLine("\nMaking video borrowable:");
+
+            Borrowable borrowvideo = new Borrowable(video);
+            borrowvideo.BorrowItem("Customer #1");
+            borrowvideo.BorrowItem("Customer #2");
+
+            borrowvideo.Display();
         }
     }
 }
