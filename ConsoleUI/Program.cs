@@ -96,10 +96,10 @@ namespace ConsoleUI
 
         private static void SingletonDemo()
         {
-            var b1 = LoadBalancer.GetLoadBalancer();
-            var b2 = LoadBalancer.GetLoadBalancer();
-            var b3 = LoadBalancer.GetLoadBalancer();
-            var b4 = LoadBalancer.GetLoadBalancer();
+            var b1 = LoadBalancer.instance;
+            var b2 = LoadBalancer.instance;
+            var b3 = LoadBalancer.instance;
+            var b4 = LoadBalancer.instance;
 
             // Same instance?
             if (b1 == b2 && b2 == b3 && b3 == b4)
@@ -108,7 +108,7 @@ namespace ConsoleUI
             }
 
             // Load balance 15 server requests
-            var balancer = LoadBalancer.GetLoadBalancer();
+            var balancer = LoadBalancer.instance;
             for (var i = 0; i < 15; i++)
             {
                 var server = balancer.Server;
