@@ -1,6 +1,7 @@
 ﻿using System;
 using DesignPatterns.AbstractFactory;
 using DesignPatterns.AbstractFactory.Factories;
+using DesignPatterns.Adapter;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Builders;
 using DesignPatterns.Factory.Documents;
@@ -22,6 +23,8 @@ namespace ConsoleUI
             PrototypeDemo();
             Console.WriteLine("------------------------------------------------------");
             SingletonDemo();
+            Console.WriteLine("------------------------------------------------------");
+            AdapterDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -111,6 +114,23 @@ namespace ConsoleUI
                 var server = balancer.Server;
                 Console.WriteLine($"Dispatch Request to: {server}");
             }
+        }
+
+        private static void AdapterDemo()
+        {
+            // Non-adapted chemical compound
+            var unknown = new Compound("Unknown");
+            unknown.Display();
+
+            // Adapted chemical compounds
+            Compound water = new RichCompound("Water");
+            water.Display();
+            
+            Compound benzene = new RichCompound("Benzene");
+            benzene.Display();
+
+            Compound ethanol = new RichCompound("Ethanol");
+            ethanol.Display();
         }
     }
 }
