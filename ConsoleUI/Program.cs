@@ -2,6 +2,7 @@
 using DesignPatterns.AbstractFactory;
 using DesignPatterns.AbstractFactory.Factories;
 using DesignPatterns.Adapter;
+using DesignPatterns.Bridge;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Builders;
 using DesignPatterns.Factory.Documents;
@@ -25,6 +26,8 @@ namespace ConsoleUI
             SingletonDemo();
             Console.WriteLine("------------------------------------------------------");
             AdapterDemo();
+            Console.WriteLine("------------------------------------------------------");
+            BridgeDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -131,6 +134,23 @@ namespace ConsoleUI
 
             Compound ethanol = new RichCompound("Ethanol");
             ethanol.Display();
+        }
+
+        private static void BridgeDemo()
+        {
+            var customers = new Customers("Chicago")
+            {
+                Data = new CustomersData()
+            };
+
+            customers.Show();
+            customers.Next();
+            customers.Show();
+            customers.Next();
+            customers.Show();
+            customers.Add("Henry Velaskeza");
+
+            customers.ShowAll();
         }
     }
 }
