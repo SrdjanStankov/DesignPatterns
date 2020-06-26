@@ -7,6 +7,7 @@ using DesignPatterns.Builder;
 using DesignPatterns.Builder.Builders;
 using DesignPatterns.Composite;
 using DesignPatterns.Decorator;
+using DesignPatterns.Facade;
 using DesignPatterns.Factory.Documents;
 using DesignPatterns.Prototype;
 using DesignPatterns.Singleton;
@@ -34,6 +35,8 @@ namespace ConsoleUI
             CompositeDemo();
             Console.WriteLine("------------------------------------------------------");
             DecoratorDemo();
+            Console.WriteLine("------------------------------------------------------");
+            FacadeDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -196,6 +199,15 @@ namespace ConsoleUI
             borrowvideo.BorrowItem("Customer #2");
 
             borrowvideo.Display();
+        }
+
+        private static void FacadeDemo()
+        {
+            // Evaluate mortgage eligibility for customer
+            Customer customer = new Customer("Ann McKinsey");
+            bool eligible = Mortgage.IsEligible(customer, 125000);
+
+            Console.WriteLine($"\n{customer.Name} has been {(eligible ? "Approved" : "Rejected")}");
         }
     }
 }

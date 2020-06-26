@@ -13,6 +13,7 @@
     <ProjectReference Include="..\DesignPatterns.Bridge\DesignPatterns.Bridge.csproj" />
     <ProjectReference Include="..\DesignPatterns.Composite\DesignPatterns.Composite.csproj" />
     <ProjectReference Include="..\DesignPatterns.Decorator\DesignPatterns.Decorator.csproj" />
+    <ProjectReference Include="..\DesignPatterns.Facade\DesignPatterns.Facade.csproj" />
     <ProjectReference Include="..\DesignPatterns.Prototype\DesignPatterns.Prototype.csproj" />
     <ProjectReference Include="..\DesignPatterns.Singleton\DesignPatterns.Singleton.csproj" />
   </ItemGroup>
