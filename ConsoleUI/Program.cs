@@ -5,6 +5,7 @@ using DesignPatterns.Adapter;
 using DesignPatterns.Bridge;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Builders;
+using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Composite;
 using DesignPatterns.Decorator;
 using DesignPatterns.Facade;
@@ -43,6 +44,8 @@ namespace ConsoleUI
             FlyweightDemo();
             Console.WriteLine("------------------------------------------------------");
             ProxyDemo();
+            Console.WriteLine("------------------------------------------------------");
+            ChainOfResponsibilityDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -240,6 +243,27 @@ namespace ConsoleUI
             Console.WriteLine("4 - 2 = " + proxy.Sub(4, 2));
             Console.WriteLine("4 * 2 = " + proxy.Mul(4, 2));
             Console.WriteLine("4 / 2 = " + proxy.Div(4, 2));
+        }
+
+        private static void ChainOfResponsibilityDemo()
+        {
+            Approver larry = new Director();
+            Approver sam = new VicePresident();
+            Approver tammy = new President();
+
+            larry.SetSuccessor(sam);
+            sam.SetSuccessor(tammy);
+
+            // Generate and process purchase requests
+
+            Purchase p = new Purchase(2034, 350.00, "Assets");
+            larry.ProcessRequest(p);
+
+            p = new Purchase(2035, 32590.10, "Project X");
+            larry.ProcessRequest(p);
+
+            p = new Purchase(2036, 122100.00, "Project Y");
+            larry.ProcessRequest(p);
         }
     }
 }
