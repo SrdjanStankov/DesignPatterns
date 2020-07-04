@@ -11,6 +11,7 @@ using DesignPatterns.Facade;
 using DesignPatterns.Factory.Documents;
 using DesignPatterns.Flyweight;
 using DesignPatterns.Prototype;
+using DesignPatterns.Proxy;
 using DesignPatterns.Singleton;
 
 namespace ConsoleUI
@@ -40,6 +41,8 @@ namespace ConsoleUI
             FacadeDemo();
             Console.WriteLine("------------------------------------------------------");
             FlyweightDemo();
+            Console.WriteLine("------------------------------------------------------");
+            ProxyDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -227,6 +230,16 @@ namespace ConsoleUI
                 Character character = factory.GetCharacter(c);
                 character.Display(pointSize);
             }
+        }
+
+        private static void ProxyDemo()
+        {
+            var proxy = new MathProxy();
+
+            Console.WriteLine("4 + 2 = " + proxy.Add(4, 2));
+            Console.WriteLine("4 - 2 = " + proxy.Sub(4, 2));
+            Console.WriteLine("4 * 2 = " + proxy.Mul(4, 2));
+            Console.WriteLine("4 / 2 = " + proxy.Div(4, 2));
         }
     }
 }
