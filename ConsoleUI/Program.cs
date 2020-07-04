@@ -17,6 +17,7 @@ using DesignPatterns.Prototype;
 using DesignPatterns.Proxy;
 using DesignPatterns.Singleton;
 using DesignPatterns.Interpreter;
+using DesignPatterns.Iterator;
 
 namespace ConsoleUI
 {
@@ -53,6 +54,8 @@ namespace ConsoleUI
             CommandDemo();
             Console.WriteLine("------------------------------------------------------");
             InterpreterDemo();
+            Console.WriteLine("------------------------------------------------------");
+            IteratorDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -303,6 +306,22 @@ namespace ConsoleUI
             }
 
             Console.WriteLine($"{roman} = {context.Output}");
+        }
+
+        private static void IteratorDemo()
+        {
+            var items = new Item[3]
+            {
+                new Item("Item 0"),
+                new Item("Item 1"),
+                new Item("Item 2"),
+            };
+
+            var itemList = new ItemCollection(items);
+            foreach (var item in itemList)
+            {
+                Console.WriteLine(item.Name);
+            }
         }
     }
 }
