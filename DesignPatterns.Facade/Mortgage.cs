@@ -10,7 +10,7 @@ namespace DesignPatterns.Facade
             Console.WriteLine($"{cust.Name} applies for {amount:C} loan\n");
 
             // Check creditworthiness of applicant
-            return Bank.HasSufficientSavings(cust, amount) && Loan.HasNoBadLoans(cust) && Credit.HasGoodCredit(cust);
+            return Bank.HasSufficientSavings(cust) && Loan.HasNoBadLoans(cust) && Credit.HasGoodCredit(cust);
         }
     }
 }

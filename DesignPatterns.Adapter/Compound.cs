@@ -8,7 +8,7 @@ namespace DesignPatterns.Adapter
         protected float boilingPoint;
         protected float meltingPoint;
         protected double molecularWeight;
-        protected string molecularFormula;
+        protected string? molecularFormula;
 
         public Compound(string chemical)
         {

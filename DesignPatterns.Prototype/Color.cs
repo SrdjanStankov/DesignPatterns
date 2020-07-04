@@ -15,7 +15,7 @@ namespace DesignPatterns.Prototype
             Blue = blue;
         }
 
-        public override ColorPrototype Clone()
+        public override ColorPrototype? Clone()
         {
             Console.WriteLine($"Cloning color RGB: {Red,3},{Green,4},{Blue,4}");
             return MemberwiseClone() as ColorPrototype;

@@ -2,9 +2,8 @@
 {
     public class MotorCycleBuilder : VehicleBuilder
     {
-        public MotorCycleBuilder()
+        public MotorCycleBuilder() : base("MotorCycle")
         {
-            Vehicle = new Vehicle("MotorCycle");
         }
 
         public override void BuildFrame() => Vehicle["frame"] = "MotorCycle Frame";

@@ -2,7 +2,7 @@
 {
     public abstract class Approver
     {
-        protected Approver successor;
+        protected Approver? successor;
 
         public void SetSuccessor(Approver successor) => this.successor = successor;
 
