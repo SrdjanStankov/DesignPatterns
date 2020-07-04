@@ -6,6 +6,7 @@ using DesignPatterns.Bridge;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Builders;
 using DesignPatterns.ChainOfResponsibility;
+using DesignPatterns.Command;
 using DesignPatterns.Composite;
 using DesignPatterns.Decorator;
 using DesignPatterns.Facade;
@@ -46,6 +47,8 @@ namespace ConsoleUI
             ProxyDemo();
             Console.WriteLine("------------------------------------------------------");
             ChainOfResponsibilityDemo();
+            Console.WriteLine("------------------------------------------------------");
+            CommandDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -264,6 +267,15 @@ namespace ConsoleUI
 
             p = new Purchase(2036, 122100.00, "Project Y");
             larry.ProcessRequest(p);
+        }
+
+        private static void CommandDemo()
+        {
+            Invoker invoker = new Invoker(new ConcreteCommand(new Receiver()));
+
+            // Set and execute command
+            invoker.SetCommand(new ConcreteCommand(new Receiver()));
+            invoker.ExecuteCommand();
         }
     }
 }
