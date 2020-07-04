@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DesignPatterns.AbstractFactory;
 using DesignPatterns.AbstractFactory.Factories;
 using DesignPatterns.Adapter;
@@ -15,6 +16,7 @@ using DesignPatterns.Flyweight;
 using DesignPatterns.Prototype;
 using DesignPatterns.Proxy;
 using DesignPatterns.Singleton;
+using DesignPatterns.Interpreter;
 
 namespace ConsoleUI
 {
@@ -49,6 +51,8 @@ namespace ConsoleUI
             ChainOfResponsibilityDemo();
             Console.WriteLine("------------------------------------------------------");
             CommandDemo();
+            Console.WriteLine("------------------------------------------------------");
+            InterpreterDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -276,6 +280,29 @@ namespace ConsoleUI
             // Set and execute command
             invoker.SetCommand(new ConcreteCommand(new Receiver()));
             invoker.ExecuteCommand();
+        }
+
+        private static void InterpreterDemo()
+        {
+            var roman = "MCMXXVIII";
+            var context = new Context(roman);
+
+            // Build the 'parse tree'
+            var tree = new List<Expression>
+            {
+                new ThousandExpression(),
+                new HundredExpression(),
+                new TenExpression(),
+                new OneExpression()
+            };
+
+            // Interpret
+            foreach (var exp in tree)
+            {
+                exp.Interpret(context);
+            }
+
+            Console.WriteLine($"{roman} = {context.Output}");
         }
     }
 }

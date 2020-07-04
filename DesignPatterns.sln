@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.ChainOfRespo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Command", "DesignPatterns.Command\DesignPatterns.Command.csproj", "{7AC29066-60FC-42AD-B61D-C34CBF6B006A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Interpreter", "DesignPatterns.Interpreter\DesignPatterns.Interpreter.csproj", "{3431DE44-DCEB-4250-8413-BC1E2F1D55EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{7AC29066-60FC-42AD-B61D-C34CBF6B006A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AC29066-60FC-42AD-B61D-C34CBF6B006A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AC29066-60FC-42AD-B61D-C34CBF6B006A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3431DE44-DCEB-4250-8413-BC1E2F1D55EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3431DE44-DCEB-4250-8413-BC1E2F1D55EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3431DE44-DCEB-4250-8413-BC1E2F1D55EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3431DE44-DCEB-4250-8413-BC1E2F1D55EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
