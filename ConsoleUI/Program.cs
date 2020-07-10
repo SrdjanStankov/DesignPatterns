@@ -19,6 +19,7 @@ using DesignPatterns.Singleton;
 using DesignPatterns.Interpreter;
 using DesignPatterns.Iterator;
 using DesignPatterns.Mediator;
+using DesignPatterns.Memento;
 
 namespace ConsoleUI
 {
@@ -59,6 +60,8 @@ namespace ConsoleUI
             IteratorDemo();
             Console.WriteLine("------------------------------------------------------");
             MediatorDemo();
+            Console.WriteLine("------------------------------------------------------");
+            MementoDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -352,6 +355,31 @@ namespace ConsoleUI
             Ringo.Send("George", "My sweet Lord");
             Paul.Send("John", "Can't buy me love");
             John.Send("Yoko", "My sweet love");
+        }
+
+        private static void MementoDemo()
+        {
+            var s = new SalesProspect
+            {
+                Name = "Noel van Helen",
+                Phone = "(412) 256-0990",
+                Budget = 25000.0
+            };
+
+            // Store internal state
+            var m = new ProspectMemory
+            {
+                Memento = s.SaveMemento()
+            };
+
+            // Continue changing originator
+            s.Name = "Leo Welch";
+            s.Phone = "(310) 209-7111";
+            s.Budget = 1000000.0;
+
+            // Restore saved state
+
+            s.RestoreMemento(m.Memento);
         }
     }
 }
