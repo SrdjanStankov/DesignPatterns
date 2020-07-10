@@ -23,6 +23,7 @@ using DesignPatterns.Memento;
 using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
+using DesignPatterns.Template;
 
 namespace ConsoleUI
 {
@@ -71,6 +72,8 @@ namespace ConsoleUI
             StateDemo();
             Console.WriteLine("------------------------------------------------------");
             StrategyDemo();
+            Console.WriteLine("------------------------------------------------------");
+            TemplateDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -440,6 +443,18 @@ namespace ConsoleUI
 
             studentRecords.SetSortStrategy(new MergeSort());
             studentRecords.Sort();
+        }
+
+        private static void TemplateDemo()
+        {
+            Sourdough sourdough = new Sourdough();
+            sourdough.Make();
+
+            TwelveGrain twelveGrain = new TwelveGrain();
+            twelveGrain.Make();
+
+            WholeWheat wholeWheat = new WholeWheat();
+            wholeWheat.Make();
         }
     }
 }
