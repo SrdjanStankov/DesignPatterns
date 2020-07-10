@@ -24,6 +24,7 @@ using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
 using DesignPatterns.Template;
+using DesignPatterns.Visitor;
 
 namespace ConsoleUI
 {
@@ -74,6 +75,8 @@ namespace ConsoleUI
             StrategyDemo();
             Console.WriteLine("------------------------------------------------------");
             TemplateDemo();
+            Console.WriteLine("------------------------------------------------------");
+            VisitorDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -275,9 +278,9 @@ namespace ConsoleUI
 
         private static void ChainOfResponsibilityDemo()
         {
-            Approver larry = new Director();
+            Approver larry = new DesignPatterns.ChainOfResponsibility.Director();
             Approver sam = new VicePresident();
-            Approver tammy = new President();
+            Approver tammy = new DesignPatterns.ChainOfResponsibility.President();
 
             larry.SetSuccessor(sam);
             sam.SetSuccessor(tammy);
@@ -455,6 +458,18 @@ namespace ConsoleUI
 
             WholeWheat wholeWheat = new WholeWheat();
             wholeWheat.Make();
+        }
+
+        private static void VisitorDemo()
+        {
+            var e = new Employees();
+            e.Attach(new Clerk());
+            e.Attach(new DesignPatterns.Visitor.Director());
+            e.Attach(new DesignPatterns.Visitor.President());
+
+            // Employees are 'visited'
+            e.Accept(new IncomeVisitor());
+            e.Accept(new VacationVisitor());
         }
     }
 }
