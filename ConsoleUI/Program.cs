@@ -21,6 +21,7 @@ using DesignPatterns.Iterator;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
+using DesignPatterns.State;
 
 namespace ConsoleUI
 {
@@ -65,6 +66,8 @@ namespace ConsoleUI
             MementoDemo();
             Console.WriteLine("------------------------------------------------------");
             ObserverDemo();
+            Console.WriteLine("------------------------------------------------------");
+            StateDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -400,6 +403,20 @@ namespace ConsoleUI
             ibm.UpdatePrice(120.50);
             ibm.StopWatching(investor2.Update);
             ibm.UpdatePrice(120.75);
+        }
+
+        private static void StateDemo()
+        {
+            var account = new Account("Jim Johnson");
+
+            // Apply financial transactions
+
+            account.Deposit(500.0);
+            account.Deposit(300.0);
+            account.Deposit(550.0);
+            account.PayInterest();
+            account.Withdraw(2000.00);
+            account.Withdraw(1100.00);
         }
     }
 }
