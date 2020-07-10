@@ -22,6 +22,7 @@ using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
 using DesignPatterns.State;
+using DesignPatterns.Strategy;
 
 namespace ConsoleUI
 {
@@ -68,6 +69,8 @@ namespace ConsoleUI
             ObserverDemo();
             Console.WriteLine("------------------------------------------------------");
             StateDemo();
+            Console.WriteLine("------------------------------------------------------");
+            StrategyDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -417,6 +420,26 @@ namespace ConsoleUI
             account.PayInterest();
             account.Withdraw(2000.00);
             account.Withdraw(1100.00);
+        }
+
+        private static void StrategyDemo()
+        {
+            var studentRecords = new SortedList();
+
+            studentRecords.Add("Samuel");
+            studentRecords.Add("Jimmy");
+            studentRecords.Add("Sandra");
+            studentRecords.Add("Vavek");
+            studentRecords.Add("Anna");
+
+            studentRecords.SetSortStrategy(new QuickSort());
+            studentRecords.Sort();
+
+            studentRecords.SetSortStrategy(new ShellSort());
+            studentRecords.Sort();
+
+            studentRecords.SetSortStrategy(new MergeSort());
+            studentRecords.Sort();
         }
     }
 }
