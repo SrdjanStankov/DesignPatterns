@@ -20,6 +20,7 @@ using DesignPatterns.Interpreter;
 using DesignPatterns.Iterator;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
+using DesignPatterns.Observer;
 
 namespace ConsoleUI
 {
@@ -62,6 +63,8 @@ namespace ConsoleUI
             MediatorDemo();
             Console.WriteLine("------------------------------------------------------");
             MementoDemo();
+            Console.WriteLine("------------------------------------------------------");
+            ObserverDemo();
             Console.WriteLine("------------------------------------------------------");
 
 
@@ -380,6 +383,23 @@ namespace ConsoleUI
             // Restore saved state
 
             s.RestoreMemento(m.Memento);
+        }
+
+        private static void ObserverDemo()
+        {
+            var ibm = new IBM("IBM", 120.00);
+            var investor1 = new Investor("Sorros");
+            var investor2 = new Investor("Berkshire");
+            
+            ibm.StartWatching(investor1.Update);
+            ibm.StartWatching(investor2.Update);
+
+            ibm.UpdatePrice(120.10);
+            ibm.UpdatePrice(121.00);
+            ibm.StopWatching(investor1.Update);
+            ibm.UpdatePrice(120.50);
+            ibm.StopWatching(investor2.Update);
+            ibm.UpdatePrice(120.75);
         }
     }
 }

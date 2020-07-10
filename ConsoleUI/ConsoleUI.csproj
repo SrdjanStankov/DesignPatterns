@@ -22,6 +22,7 @@
     <ProjectReference Include="..\DesignPatterns.Iterator\DesignPatterns.Iterator.csproj" />
     <ProjectReference Include="..\DesignPatterns.Mediator\DesignPatterns.Mediator.csproj" />
     <ProjectReference Include="..\DesignPatterns.Memento\DesignPatterns.Memento.csproj" />
+    <ProjectReference Include="..\DesignPatterns.Observer\DesignPatterns.Observer.csproj" />
     <ProjectReference Include="..\DesignPatterns.Prototype\DesignPatterns.Prototype.csproj" />
     <ProjectReference Include="..\DesignPatterns.Proxy\DesignPatterns.Proxy.csproj" />
     <ProjectReference Include="..\DesignPatterns.Singleton\DesignPatterns.Singleton.csproj" />
